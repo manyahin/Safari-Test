@@ -1,6 +1,6 @@
 # Safari Test
 
-    python app.py
+    $ python app.py
 
 ## Example Result
 
