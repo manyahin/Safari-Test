@@ -58,11 +58,6 @@ class Safari:
     print(f'\n\nChosen cell: [{y + 1}, {x + 1}]: {self.matrix[y][x].symbol}')
     return self.matrix[y][x]
 
-  def live(self):
-    blessed_animal = self.get_random_cell()
-    blessed_animal.conquer()
-    pass
-
   def get_neighbors(self, animal):
     neighbors = []
     relatives = [
@@ -92,6 +87,11 @@ class Safari:
         pass
 
     return neighbors
+
+  def live(self):
+    blessed_animal = self.get_random_cell()
+    blessed_animal.conquer()
+    pass
 
 
 # using inheritance
@@ -128,7 +128,8 @@ class Animal(ABC):
     4. execute the same logic for other cells with the animal (recursion)
     '''
     # move the animal out of the cell
-    self.field.matrix[self.position['y']][self.position['x']] = Nobody(self.field)
+    self.field.matrix[self.position['y']
+                      ][self.position['x']] = Nobody(self.field)
     self.steps_todo['count'] -= 1
 
     neighbors = self.field.get_neighbors(self)
