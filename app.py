@@ -100,10 +100,10 @@ class Animal(ABC):
     self.field = field
     self.position = {"y": 0, "x": 0}
     '''
-        the counter with an amount of required iterations to do
-        use Python language property that reference to object is the same for cloned objects
-        thus this counter will be the same for all copied objects of the same animal
-        '''
+    the counter with an amount of required iterations to do
+    use Python language property that reference to object is the same for cloned objects
+    thus this counter will be the same for all copied objects of the same animal
+    '''
     self.steps_todo = {'count': 1}
 
   @property
