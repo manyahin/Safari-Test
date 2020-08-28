@@ -17,6 +17,14 @@ class Safari:
   def __init__(self, height=10, width=10):
     self.size = {"height": height, "width": width}
     self.matrix = []
+    '''
+    Add new animals is easy, just create a new class like:
+      class Human(Animal):
+        type = 'Human'
+        beat = ('Lion', 'Tiger', 'Wolf', 'Deer')
+    And add his name to self.animals
+      self.animals = ('Lion', 'Tiger', 'Wolf', 'Deer', 'Human')
+    '''
     self.animals = ('Lion', 'Tiger', 'Wolf', 'Deer')
 
     self.generate()
@@ -43,14 +51,13 @@ class Safari:
     return random.choice(self.animals)
 
   def make_animal(self, animal_type):
-    if animal_type == 'Lion':
-      return Lion(self)
-    elif animal_type == 'Tiger':
-      return Tiger(self)
-    elif animal_type == 'Wolf':
-      return Wolf(self)
-    elif animal_type == 'Deer':
-      return Deer(self)
+    try:
+      # using polymorphism
+      animal_class = globals()[animal_type]
+      return animal_class(self)
+    except KeyError:
+      print(f'Error: Class "{animal_type}" not realised')
+      sys.exit()
 
   def get_random_cell(self):
     y = random.randrange(self.size['height'])
