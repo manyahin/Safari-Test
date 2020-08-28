@@ -22,7 +22,7 @@ class Safari:
       class Human(Animal):
         type = 'Human'
         beat = ('Lion', 'Tiger', 'Wolf', 'Deer')
-    And add his name to self.animals
+    And add his type to self.animals
       self.animals = ('Lion', 'Tiger', 'Wolf', 'Deer', 'Human')
     '''
     self.animals = ('Lion', 'Tiger', 'Wolf', 'Deer')
