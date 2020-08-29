@@ -148,6 +148,7 @@ class Animal(ABC):
 
         # copy the predator to next cells
         animal_copy = copy.copy(self)
+        # create a new object position to remove object reference
         animal_copy.position = {'x': n.position['x'], 'y': n.position['y']}
         animal_copies.append(animal_copy)
 
